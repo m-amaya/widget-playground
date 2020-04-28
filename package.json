@@ -1,0 +1,54 @@
+{
+  "name": "widget-playground",
+  "version": "1.0.0",
+  "description": "Playground for mobile widgets",
+  "main": "server.ts",
+  "author": "Marissa Amaya <mamaya.dev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev:canvas": "env APP_TYPE=canvas TS_NODE_PROJECT=\"./build/tsconfig.webpack.json\" webpack-dev-server --progress --config ./build/webpack.dev.config.ts",
+    "dev:svelte": "env APP_TYPE=svelte TS_NODE_PROJECT=\"./build/tsconfig.webpack.json\" webpack-dev-server --progress --config ./build/webpack.dev.config.ts",
+    "dev:svg": "env APP_TYPE=svg TS_NODE_PROJECT=\"./build/tsconfig.webpack.json\" webpack-dev-server --progress --config ./build/webpack.dev.config.ts",
+    "serve:canvas": "env APP_TYPE=canvas ts-node-dev --project ./tsconfig.server.json server.ts",
+    "serve:svelte": "env APP_TYPE=svelte ts-node-dev --project ./tsconfig.server.json server.ts",
+    "serve:svg": "env APP_TYPE=svg ts-node-dev --project ./tsconfig.server.json server.ts"
+  },
+  "browserslist": [
+    "defaults",
+    "not dead",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "express": "^4.17.1",
+    "svelte": "^3.21.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "@types/circular-dependency-plugin": "^5.0.0",
+    "@types/html-webpack-plugin": "^3.2.2",
+    "@types/node": "^13.13.4",
+    "@types/webpack-dev-middleware": "^3.7.0",
+    "@types/webpack-dev-server": "^3.10.1",
+    "@types/webpack-hot-middleware": "^2.25.2",
+    "@types/webpack-merge": "^4.1.5",
+    "babel-loader": "^8.1.0",
+    "circular-dependency-plugin": "^5.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.2.1",
+    "prettier": "^2.0.5",
+    "svelte-loader": "^2.13.6",
+    "ts-node": "^8.9.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
