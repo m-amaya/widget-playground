@@ -29,12 +29,24 @@ export default {
         exclude: /node_modules/,
         loader: 'svelte-loader',
       },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {
+            limit: 8192,
+            stripdeclarations: true,
+            iesafe: true,
+            encoding: 'base64',
+          },
+        },
+      },
     ],
   },
   plugins: [
     new NamedModulesPlugin(),
     new HTMLWebpackPlugin({
-      cache: true,
       filename: PATHS.index.output,
       template: PATHS.index.input,
     }),
