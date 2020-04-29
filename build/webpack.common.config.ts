@@ -3,6 +3,8 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import { Configuration, NamedModulesPlugin } from 'webpack';
 import { PATHS } from '../project.config';
 
+import path from 'path';
+
 export default {
   target: 'web',
   entry: {
@@ -14,7 +16,9 @@ export default {
     chunkFilename: '[name].[hash].js',
   },
   resolve: {
-    alias: PATHS.aliases,
+    alias: {
+      ...PATHS.aliases,
+    },
     extensions: ['.js', '.ts', '.svelte'],
   },
   module: {
@@ -27,7 +31,12 @@ export default {
       {
         test: /\.svelte$/,
         exclude: /node_modules/,
-        loader: 'svelte-loader',
+        use: {
+          loader: 'svelte-loader',
+          options: {
+            hotReload: true,
+          },
+        },
       },
       {
         test: /\.svg$/,

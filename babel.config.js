@@ -3,4 +3,5 @@ module.exports = {
     ['@babel/env', { modules: false, targets: { node: 'current' } }],
     '@babel/typescript',
   ],
+  plugins: ['emotion'],
 };
