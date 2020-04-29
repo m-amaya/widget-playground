@@ -1,9 +1,16 @@
 <script>
-  import {css} from 'emotion';
+  import { css } from 'emotion';
+  import Background from './layers/Background.svelte';
+  import Button from './components/Button.svelte';
 
-  export const title = css({
-    color: 'pink'
+  const container = css({
+    position: 'relative',
+    height: 310,
+    width: 335,
   });
 </script>
 
-<h1 class={title}>Hello World</h1>
+<div class={container}>
+  <Background />
+  <Button />
+</div>
